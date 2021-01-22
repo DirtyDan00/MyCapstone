@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isJump = false;
     public float jumptimer;
     public float airTime;
+    public float MaxfallSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Jump();
         if (Input.GetKey(KeyCode.Space) && isJump == true)
         {
@@ -61,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+
     void Jump()
     {
         if(Input.GetButtonDown("Jump") && isOnGround == true)
@@ -73,4 +78,6 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
+    
 }
