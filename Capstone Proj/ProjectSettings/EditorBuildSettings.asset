@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameMode3.unity
     guid: 09d7c339bae3ec34a96a4d0cae4bdc7a
+  - enabled: 1
+    path: Assets/Scenes/ScoreAttackScores.unity
+    guid: c455a32865af92844b8a9622838dafe2
+  - enabled: 1
+    path: Assets/Scenes/HighScores.unity
+    guid: 84d6aa59d8ed2d24e9c54b390f5a82f8
+  - enabled: 1
+    path: Assets/Scenes/TimeAttackScores.unity
+    guid: 493c51dc34ff5f345a67431f17ee03e6
   m_configObjects: {}
