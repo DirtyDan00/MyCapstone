@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
     public bool isOnGround = false;
     public bool isJump = false;
+    public bool ceilingHit = false;
     public float jumptimer;
     public float airTime;
     public float MaxfallSpeed;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Physics2D.gravity = new Vector2(0,-5);  
         Jump();
         if (Input.GetKey(KeyCode.Space) && isJump == true)
         {
@@ -44,14 +45,22 @@ public class PlayerMovement : MonoBehaviour
             {
                 isJump = false;
             }
+            //if (ceilingHit == true)
+            //{
+            //    rb2d.velocity = Vector3.up * 0;
+            //    jumptimer = 0;
+            //    jumpSpeed = 0;
+            //    isJump = false;
+            //}
+
         }
-        
+
 
         if (Input.GetKeyUp(KeyCode.Space) || isOnGround == true)
         {
             isJump = false;
         }
-
+        
 
         if(moveInput > 0)
         {

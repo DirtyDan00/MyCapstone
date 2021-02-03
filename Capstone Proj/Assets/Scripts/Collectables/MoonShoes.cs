@@ -24,7 +24,6 @@ public class MoonShoes : MonoBehaviour
                 playerComp.jumptimer += jumpHeightTimer;
                 playerComp.airTime = playerComp.jumptimer;
                 playerComp.moveSpeed -= slowdown;
-                
                 Destroy(gameObject);
             }
         }

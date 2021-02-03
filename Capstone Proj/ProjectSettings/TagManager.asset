@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Ground
   - PowerUp1
+  - Ceiling
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - 
