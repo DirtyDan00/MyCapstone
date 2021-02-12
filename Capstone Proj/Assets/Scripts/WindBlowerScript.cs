@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class WindBlowerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log("Object has entered the trigger");
+    }
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("Object is in trigger");
+        gameObject.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * 20000 * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerExit2D(Collider2D collision)
     {
-        
+        Debug.Log("Object has left the trigger");
     }
 }
