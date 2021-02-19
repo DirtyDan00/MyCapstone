@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
-    int PlayerLives;
+    static int PlayerLives;
     bool endOfLevel = false;
-    bool playerGameOver = false;
+    static bool playerGameOver = false;
     bool gamemode1 = false;
     bool gamemode2 = false;
     bool gamemode3 = false;
@@ -28,10 +28,7 @@ public class GameMaster : MonoBehaviour
         {
             LevelCompleted();
         }
-        else if (playerGameOver == true)
-        {
-            GameOver();
-        }
+        
     }
 
     public static void LevelCompleted()
@@ -41,17 +38,23 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void PlayerDeath()
+    public static void PlayerDeath()
     {
-
+        PlayerLives--;
+        if(PlayerLives == 0)
+        {
+            GameOver();
+        }
     }
 
-    public void GameOver()
+    public static void GameOver()
     {
-        if (PlayerLives == 0)
-        {
-            playerGameOver = true;
-        }
+
+        Debug.Log("Game Over!");
+        SceneManager.LoadScene("Menu");
+        //save score
+        //save time
+
     }
 
     public void GameModeCheck()
@@ -70,4 +73,5 @@ public class GameMaster : MonoBehaviour
                 break;
         }
     }
+
 }
