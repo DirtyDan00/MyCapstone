@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb2d.freezeRotation = true;
         Physics2D.gravity = new Vector2(0,-5);  
         Jump();
         if (Input.GetKey(KeyCode.Space) && isJump == true)
@@ -45,14 +46,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 isJump = false;
             }
-            //if (ceilingHit == true)
-            //{
-            //    rb2d.velocity = Vector3.up * 0;
-            //    jumptimer = 0;
-            //    jumpSpeed = 0;
-            //    isJump = false;
-            //}
-
         }
 
 
