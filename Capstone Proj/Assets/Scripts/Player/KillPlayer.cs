@@ -13,6 +13,8 @@ public class KillPlayer : MonoBehaviour
         {
             MoonShoes.ClearOnDeath();
             GameMaster.PlayerDeath();
+            TimerScript.ClearTimer();
+            ScoreScript.ClearScore();
             //SceneManager.LoadScene("Level1");
             collision.transform.position = spawnPoint.position;
             

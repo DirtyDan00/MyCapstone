@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: 
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimeAttackScores.unity
     guid: 493c51dc34ff5f345a67431f17ee03e6
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: b21455e58fdb5fd46867c1e3f2159357
   m_configObjects: {}

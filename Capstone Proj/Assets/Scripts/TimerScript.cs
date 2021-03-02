@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
     Text TimerUI;
-    private float hoursCount;
+    private static float baseTime;
     private float minuteCount;
-    private float secondsCount;
+    private static float secondsCount;
     private float milisecondsCount;
     private void Start()
     {
@@ -20,6 +20,7 @@ public class TimerScript : MonoBehaviour
     {
         Timer();
         milisecondsCount = Time.deltaTime * 1000;
+        
     }
 
     private void Timer()
@@ -36,5 +37,9 @@ public class TimerScript : MonoBehaviour
             minuteCount++;
             secondsCount = 0;
         }
+    }
+    public static void ClearTimer()
+    {
+        secondsCount = 0;
     }
 }

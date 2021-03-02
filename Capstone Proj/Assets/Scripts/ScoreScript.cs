@@ -14,5 +14,9 @@ public class ScoreScript : MonoBehaviour
     {
         currentScore.text = "Score: " + scoreValue;
     }
+    public static void ClearScore()
+    {
+        scoreValue = 0;
+    }
 
 }

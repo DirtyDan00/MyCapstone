@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
+    Text currentLives;
     static int PlayerLives;
-    bool endOfLevel = false;
     static bool playerGameOver = false;
     bool gamemode1 = false;
     bool gamemode2 = false;
@@ -16,28 +17,17 @@ public class GameMaster : MonoBehaviour
     void Start()
     {
         PlayerLives = 3;
-        endOfLevel = false;
         playerGameOver = false;
+        currentLives = GetComponent<Text>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (endOfLevel == true)
-        {
-            LevelCompleted();
-        }
+        currentLives.text = "Lives" + PlayerLives;
         
     }
-
-    public static void LevelCompleted()
-    {
-        
-        Debug.Log("Level Won!");
-        SceneManager.LoadScene("Menu");
-    }
-
     public static void PlayerDeath()
     {
         PlayerLives--;
@@ -51,7 +41,7 @@ public class GameMaster : MonoBehaviour
     {
 
         Debug.Log("Game Over!");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("GameOverScene");
         //save score
         //save time
 
@@ -59,8 +49,8 @@ public class GameMaster : MonoBehaviour
 
     public void GameModeCheck()
     {
-        
-        switch(GameModeSelection)
+
+        switch (GameModeSelection)
         {
             case 1:
                 gamemode1 = true;
