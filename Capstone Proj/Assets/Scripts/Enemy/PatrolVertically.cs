@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patrol : MonoBehaviour
+public class PatrolVertically : MonoBehaviour
 {
     public float speed;
-    public bool moveRight;
+    public bool moveUp;
 
     private void Update()
     {
-        if(moveRight)
+        if(moveUp)
         {
-            transform.Translate(1.5f * Time.deltaTime * speed, 0,0);
+            transform.Translate(0, 1.5f * Time.deltaTime * speed, 0);
             //transform.localScale = new Vector2(0.5f, 0.5f);
         } else
         {
-            transform.Translate(-1.5f * Time.deltaTime * speed, 0, 0);
+            transform.Translate(0, -1.5f * Time.deltaTime * speed, 0);
             //transform.localScale = new Vector2(-0.5f, 0.5f);
         }
     }
@@ -24,13 +24,13 @@ public class Patrol : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("turn"))
         {
-            if(moveRight)
+            if(moveUp)
             {
-                moveRight = false;
+                moveUp = false;
             }
             else
             {
-                moveRight = true;
+                moveUp = true;
             }
         }
     }
