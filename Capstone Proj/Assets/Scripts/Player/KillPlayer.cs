@@ -11,13 +11,25 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            MoonShoes.ClearOnDeath();
-            GameMaster.PlayerDeath();
-            TimerScript.ClearTimer();
-            ScoreScript.ClearScore();
-            //SceneManager.LoadScene("Level1");
-            collision.transform.position = spawnPoint.position;
+            if(GameMaster.playerLives <=1)
+            {
+                GameMaster.GameOver();
+            }
+            else
+            {
+                //StartCoroutine(WaitForIt(3.0F));
+                GameMaster.PlayerDeath();
+                TimerScript.ClearTimer();
+                ScoreScript.ClearScore();
+                collision.transform.position = spawnPoint.position;
+            }
+            
             
         }
     }
+
+    //IEnumerator WaitForIt(float waitTime)
+    //{
+    //    yield return new WaitForSeconds(waitTime);
+    //}
 }

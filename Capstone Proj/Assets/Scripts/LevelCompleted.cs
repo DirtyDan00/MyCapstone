@@ -29,6 +29,6 @@ public class LevelCompleted : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         Destroy(UIText);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("LevelSelector");
     }
 }

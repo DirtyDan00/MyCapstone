@@ -18,10 +18,7 @@ public class LevelSelectScript : MonoBehaviour
             case "Level 3":
                 SceneManager.LoadScene("Level3");
                 break;
-            case "Menu":
-                SceneManager.LoadScene("Menu");
-                break;
         }
-
+    
     }
 }

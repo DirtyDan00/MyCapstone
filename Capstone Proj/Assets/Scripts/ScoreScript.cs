@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
     Text currentScore;
+    public static Text finalScoreUI;
     public static int scoreValue;
     private void Start()
     {
@@ -13,6 +14,10 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         currentScore.text = "Score: " + scoreValue;
+    }
+    public static void finalScoreDisplay()
+    {
+        finalScoreUI.text = "Final Score" + scoreValue;
     }
     public static void ClearScore()
     {

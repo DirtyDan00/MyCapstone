@@ -7,31 +7,24 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour
 {
     Text currentLives;
-    static int PlayerLives;
-    static bool playerGameOver = false;
-    bool gamemode1 = false;
-    bool gamemode2 = false;
-    bool gamemode3 = false;
-
-    int GameModeSelection;
+    public static int playerLives;
     void Start()
     {
-        PlayerLives = 3;
-        playerGameOver = false;
-        currentLives = GetComponent<Text>();
+        playerLives = 3;
+        //currentLives = GetComponent<Text>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentLives.text = "Lives" + PlayerLives;
-        
+        //currentLives.text = "Lives" + playerLives;
+
     }
     public static void PlayerDeath()
     {
-        PlayerLives--;
-        if(PlayerLives == 0)
+        playerLives--;
+        if(playerLives == 0)
         {
             GameOver();
         }
@@ -45,23 +38,6 @@ public class GameMaster : MonoBehaviour
         //save score
         //save time
 
-    }
-
-    public void GameModeCheck()
-    {
-
-        switch (GameModeSelection)
-        {
-            case 1:
-                gamemode1 = true;
-                break;
-            case 2:
-                gamemode2 = true;
-                break;
-            case 3:
-                gamemode3 = true;
-                break;
-        }
     }
 
 }
