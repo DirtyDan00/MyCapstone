@@ -13,6 +13,7 @@ public class KillPlayer : MonoBehaviour
         {
             if(GameMaster.playerLives <=1)
             {
+                TimerScript.ClearTimer();
                 GameMaster.GameOver();
             }
             else
@@ -27,6 +28,8 @@ public class KillPlayer : MonoBehaviour
             
         }
     }
+
+    
 
     //IEnumerator WaitForIt(float waitTime)
     //{

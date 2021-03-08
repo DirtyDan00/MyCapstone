@@ -12,6 +12,9 @@ public class MainMenuUI : MonoBehaviour
             case "scene1":
                 SceneManager.LoadScene("LevelSelector");
                 break;
+            case "Exit":
+                Application.Quit();
+                break;
         }
     }
 }

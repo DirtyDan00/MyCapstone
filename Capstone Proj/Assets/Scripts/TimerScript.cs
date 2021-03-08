@@ -10,7 +10,7 @@ public class TimerScript : MonoBehaviour
     public static Text finalTimerUI;
     private static float baseTime;
     private float minuteCount;
-    private static float secondsCount;
+    public static float secondsCount;
     private float milisecondsCount;
     private void Start()
     {
@@ -41,7 +41,9 @@ public class TimerScript : MonoBehaviour
     }
     public static void finalTimeDisplay()
     {
+        secondsCount = PlayerPrefs.GetFloat("Timer", 0);
         finalTimerUI.text = "Final Time" + secondsCount;
+
     }
     public static void ClearTimer()
     {

@@ -6,19 +6,19 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
-    Text currentLives;
+    public Text currentLives;
     public static int playerLives;
     void Start()
     {
         playerLives = 3;
-        //currentLives = GetComponent<Text>();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //currentLives.text = "Lives" + playerLives;
+        currentLives.text = "Lives: " + playerLives;
 
     }
     public static void PlayerDeath()
