@@ -13,6 +13,7 @@ public class Rubbies : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            SFXScript.PlayAudio("gemcollect");
             currScore = ScoreScript.scoreValue += 100;
             PlayerScore = currScore;
             Destroy(gameObject);

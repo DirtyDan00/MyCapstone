@@ -11,6 +11,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
+            SFXScript.PlayAudio("death");
             if(GameMaster.playerLives <=1)
             {
                 TimerScript.ClearTimer();
@@ -18,7 +19,7 @@ public class KillPlayer : MonoBehaviour
             }
             else
             {
-                //StartCoroutine(WaitForIt(3.0F));
+                
                 GameMaster.PlayerDeath();
                 TimerScript.ClearTimer();
                 ScoreScript.ClearScore();

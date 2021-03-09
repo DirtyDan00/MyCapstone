@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public float jumptimer;
     public float airTime;
     public float MaxfallSpeed;
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         rb2d.GetComponent<Rigidbody2D>();
     }
 
@@ -41,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, JumpY), ForceMode2D.Impulse);
                 rb2d.velocity = Vector3.up * jumpSpeed;
                 jumptimer -= Time.deltaTime;
+                
+                
             }
             else
             {
@@ -74,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump") && isOnGround == true)
         {
+            SFXScript.PlayAudio("jumpsfx");
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, JumpY), ForceMode2D.Impulse);
             isOnGround = false;
             isJump = true;

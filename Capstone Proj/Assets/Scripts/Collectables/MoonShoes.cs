@@ -16,6 +16,7 @@ public class MoonShoes : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            SFXScript.PlayAudio("powerup");
             hasMoonBoots = true;
             GameObject player = collision.gameObject;
             PlayerMovement playerComp = player.GetComponent<PlayerMovement>();
